@@ -65,7 +65,7 @@ RUN cd \
         --with-openssl=$HOME/openssl-${OPENSSL_VERSION} \
         --with-http_v2_module \
         --with-http_stub_status_module \
-        --add-module=$HOME/ngx_pagespeed-${NPS_VERSION} \
+        --add-module=$HOME/incubator-pagespeed-ngx-${NPS_VERSION} \
     && make \
     && make install
 
