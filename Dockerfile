@@ -37,7 +37,7 @@ RUN cd && wget https://www.openssl.org/source/openssl-${OPENSSL_VERSION}.tar.gz 
 RUN cd \
     && wget https://github.com/pagespeed/ngx_pagespeed/archive/v${NPS_VERSION}.tar.gz \
     && tar -xvzf v${NPS_VERSION}.tar.gz \
-    && cd ngx_pagespeed-${NPS_VERSION}/ \
+    && cd incubator-pagespeed-ngx-${NPS_VERSION}/ \
     && [ -e scripts/format_binary_url.sh ] && psol_url=$(scripts/format_binary_url.sh PSOL_BINARY_URL) \
     && wget ${psol_url} \
     && tar -xvzf $(basename ${psol_url})  # extracts to psol/
