@@ -23,7 +23,7 @@ RUN apt-get update && \
         
 RUN cd \
     && wget https://github.com/openresty/headers-more-nginx-module/archive/v${HEADER_VERSION}.tar.gz \
-    && tar -xvzf v${HEADER_VERSION}.tar.gz \
+    && tar -xvzf v${HEADER_VERSION}.tar.gz
 
 RUN cd \
     && wget https://github.com/nbs-system/naxsi/archive/${NAXSI_VERSION}.tar.gz \
