@@ -5,7 +5,8 @@ ENV \
     NAXSI_VERSION=0.55.3 \
     OPENSSL_VERSION=1.1.0f \
     NPS_VERSION=1.12.34.2-stable \
-    NGINX_VERSION=1.13.3
+    NGINX_VERSION=1.13.3 \
+    HEADER_VERSION=0.33
 
 RUN apt-get update && \
     apt-get install --no-install-recommends --no-install-suggests -y \
@@ -20,6 +21,10 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*        
         
+RUN cd \
+    && wget https://github.com/openresty/headers-more-nginx-module/archive/v${HEADER_VERSION}.tar.gz \
+    && tar -xvzf v${HEADER_VERSION}.tar.gz \
+
 RUN cd \
     && wget https://github.com/nbs-system/naxsi/archive/${NAXSI_VERSION}.tar.gz \
     && tar -xvzf ${NAXSI_VERSION}.tar.gz
@@ -48,6 +53,7 @@ RUN cd \
     && cd nginx-${NGINX_VERSION} \
     && ./configure \
         --add-module=$HOME/naxsi-${NAXSI_VERSION}/naxsi_src \
+        --add-module=$HOME/headers-more-nginx-module-${HEADER_VERSION}/src \
         --prefix=/usr/local/nginx \
         --user=www-data \
         --group=www-data \
