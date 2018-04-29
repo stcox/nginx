@@ -53,7 +53,7 @@ RUN cd \
     && cd nginx-${NGINX_VERSION} \
     && ./configure \
         --add-module=$HOME/naxsi-${NAXSI_VERSION}/naxsi_src \
-        --add-module=$HOME/headers-more-nginx-module-${HEADER_VERSION}/src \
+        --add-module=$HOME/headers-more-nginx-module-${HEADER_VERSION}/ \
         --prefix=/usr/local/nginx \
         --user=www-data \
         --group=www-data \
