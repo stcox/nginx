@@ -1,3 +1,5 @@
+No longer maintained - 
+
 # Nginx docker Image
 **Nginx docker image with Pagespeed, OpenSSL, and NAXSI Firewall.**
 
